@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile App Wireframes - Wool Monitoring</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f5f7fa; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+        .header { text-align: center; margin-bottom: 40px; }
+        .header h1 { color: #333; font-size: 2.5em; margin-bottom: 10px; }
+        .wireframe-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .phone-mockup { background: #333; border-radius: 25px; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+        .screen { background: white; border-radius: 15px; height: 600px; overflow: hidden; position: relative; }
+        .screen-header { background: linear-gradient(45deg, #667eea, #764ba2); color: white; padding: 15px; text-align: center; font-weight: bold; }
+        .screen-content { padding: 20px; height: calc(100% - 60px); overflow-y: auto; }
+        .nav-bar { position: absolute; bottom: 0; left: 0; right: 0; background: #f8f9fa; border-top: 1px solid #ddd; display: flex; }
+        .nav-item { flex: 1; padding: 10px; text-align: center; font-size: 12px; color: #666; }
+        .nav-item.active { color: #667eea; background: rgba(102, 126, 234, 0.1); }
+        .card { background: #f8f9fa; border-radius: 10px; padding: 15px; margin-bottom: 15px; }
+        .btn-mobile { background: #667eea; color: white; padding: 10px 20px; border: none; border-radius: 20px; width: 100%; margin: 10px 0; }
+        .status-badge { display: inline-block; padding: 4px 8px; border-radius: 12px; font-size: 11px; font-weight: bold; }
+        .status-processing { background: #ffeaa7; color: #d63031; }
+        .status-shipped { background: #55efc4; color: #00b894; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; color: #333; }
+        .form-group input, .form-group select { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
+        .back-btn { position: absolute; top: 20px; left: 20px; background: rgba(255,255,255,0.2); color: white; border: none; padding: 10px; border-radius: 50%; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📱 Mobile App Wireframes</h1>
+            <p>User Interface Flow for Wool Monitoring Mobile Application</p>
+            <a href="index.html" style="display: inline-block; margin-top: 20px; padding: 10px 20px; background: #667eea; color: white; text-decoration: none; border-radius: 20px;">← Back to Dashboard</a>
+        </div>
+
+        <div class="wireframe-grid">
+            <!-- Login Screen -->
+            <div class="phone-mockup">
+                <div class="screen">
+                    <div class="screen-header">
+                        🐑 Wool Monitor Login
+                    </div>
+                    <div class="screen-content">
+                        <div style="text-align: center; margin: 40px 0;">
+                            <div style="width: 80px; height: 80px; background: #667eea; border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 30px; color: white;">🐑</div>
+                            <h3>Welcome Back</h3>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" placeholder="farmer@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" placeholder="••••••••">
+                        </div>
+                        <button class="btn-mobile">Sign In</button>
+                        <div style="text-align: center; margin-top: 20px;">
+                            <a href="#" style="color: #667eea; text-decoration: none;">Forgot Password?</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Screen -->
+            <div class="phone-mockup">
+                <div class="screen">
+                    <div class="screen-header">
+                        Dashboard
+                        <button class="back-btn">←</button>
+                    </div>
+                    <div class="screen-content">
+                        <div class="card">
+                            <h4>Quick Stats</h4>
+                            <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                                <div style="text-align: center;">
+                                    <div style="font-size: 24px; font-weight: bold; color: #667eea;">12</div>
+                                    <div style="font-size: 12px; color: #666;">Active Batches</div>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div style="font-size: 24px; font-weight: bold; color: #00b894;">98%</div>
+                                    <div style="font-size: 12px; color: #666;">Quality Score</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h4>Recent Activity</h4>
+                            <div style="margin-top: 10px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #eee;">
+                                    <span>Batch GVF-001</span>
+                                    <span class="status-badge status-processing">Processing</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0;">
+                                    <span>Batch HWC-002</span>
+                                    <span class="status-badge status-shipped">Shipped</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-bar">
+                        <div class="nav-item active">🏠<br>Home</div>
+                        <div class="nav-item">📊<br>Batches</div>
+                        <div class="nav-item">📍<br>Track</div>
+                        <div class="nav-item">⚙️<br>Settings</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Batch Tracking Screen -->
+            <div class="phone-mockup">
+                <div class="screen">
+                    <div class="screen-header">
+                        Batch Tracking
+                        <button class="back-btn">←</button>
+                    </div>
+                    <div class="screen-content">
+                        <div class="card">
+                            <h4>Batch GVF-2024-001</h4>
+                            <p style="color: #666; margin: 5px 0;">Green Valley Farm</p>
+                            <div style="display: flex; justify-content: space-between; margin: 10px 0;">
+                                <span>Weight: 150.5 kg</span>
+                                <span class="status-badge status-processing">Processing</span>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h4>Tracking Timeline</h4>
+                            <div style="margin-top: 15px;">
+                                <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                                    <div style="width: 12px; height: 12px; background: #00b894; border-radius: 50%; margin-right: 15px;"></div>
+                                    <div>
+                                        <div style="font-weight: bold;">Harvested</div>
+                                        <div style="font-size: 12px; color: #666;">Jan 15, 2024 - 09:30 AM</div>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                                    <div style="width: 12px; height: 12px; background: #667eea; border-radius: 50%; margin-right: 15px;"></div>
+                                    <div>
+                                        <div style="font-weight: bold;">Quality Check</div>
+                                        <div style="font-size: 12px; color: #666;">Jan 16, 2024 - 02:15 PM</div>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: center;">
+                                    <div style="width: 12px; height: 12px; background: #ddd; border-radius: 50%; margin-right: 15px;"></div>
+                                    <div>
+                                        <div style="color: #666;">Processing</div>
+                                        <div style="font-size: 12px; color: #666;">In Progress...</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-bar">
+                        <div class="nav-item">🏠<br>Home</div>
+                        <div class="nav-item active">📊<br>Batches</div>
+                        <div class="nav-item">📍<br>Track</div>
+                        <div class="nav-item">⚙️<br>Settings</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quality Assessment Screen -->
+            <div class="phone-mockup">
+                <div class="screen">
+                    <div class="screen-header">
+                        Quality Assessment
+                        <button class="back-btn">←</button>
+                    </div>
+                    <div class="screen-content">
+                        <div class="card">
+                            <h4>AI Quality Analysis</h4>
+                            <div style="text-align: center; margin: 20px 0;">
+                                <div style="width: 100px; height: 100px; background: #f8f9fa; border: 2px dashed #ddd; border-radius: 10px; margin: 0 auto; display: flex; align-items: center; justify-content: center; color: #666;">
+                                    📷<br>Capture Image
+                                </div>
+                            </div>
+                            <button class="btn-mobile">Take Photo</button>
+                        </div>
+                        <div class="card">
+                            <h4>Manual Assessment</h4>
+                            <div class="form-group">
+                                <label>Fiber Length</label>
+                                <select>
+                                    <option>Select length</option>
+                                    <option>Short (< 60mm)</option>
+                                    <option>Medium (60-80mm)</option>
+                                    <option>Long (> 80mm)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Color Grade</label>
+                                <select>
+                                    <option>Select grade</option>
+                                    <option>White</option>
+                                    <option>Light Grey</option>
+                                    <option>Dark Grey</option>
+                                </select>
+                            </div>
+                            <button class="btn-mobile">Submit Assessment</button>
+                        </div>
+                    </div>
+                    <div class="nav-bar">
+                        <div class="nav-item">🏠<br>Home</div>
+                        <div class="nav-item">📊<br>Batches</div>
+                        <div class="nav-item active">📍<br>Track</div>
+                        <div class="nav-item">⚙️<br>Settings</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Farm Management Screen -->
+            <div class="phone-mockup">
+                <div class="screen">
+                    <div class="screen-header">
+                        Farm Management
+                        <button class="back-btn">←</button>
+                    </div>
+                    <div class="screen-content">
+                        <div class="card">
+                            <h4>Green Valley Farm</h4>
+                            <p style="color: #666;">Montana, USA</p>
+                            <div style="display: flex; justify-content: space-between; margin: 10px 0;">
+                                <div>
+                                    <div style="font-weight: bold;">250</div>
+                                    <div style="font-size: 12px; color: #666;">Sheep Count</div>
+                                </div>
+                                <div>
+                                    <div style="font-weight: bold;">15</div>
+                                    <div style="font-size: 12px; color: #666;">Active Batches</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h4>Quick Actions</h4>
+                            <button class="btn-mobile" style="margin: 5px 0;">Add New Batch</button>
+                            <button class="btn-mobile" style="margin: 5px 0; background: #00b894;">View Analytics</button>
+                            <button class="btn-mobile" style="margin: 5px 0; background: #fd79a8;">Generate Report</button>
+                        </div>
+                        <div class="card">
+                            <h4>Weather & Conditions</h4>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <div style="font-size: 24px;">☀️ 22°C</div>
+                                    <div style="font-size: 12px; color: #666;">Sunny, Low Humidity</div>
+                                </div>
+                                <div style="text-align: right;">
+                                    <div style="color: #00b894; font-weight: bold;">Optimal</div>
+                                    <div style="font-size: 12px; color: #666;">Shearing Conditions</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-bar">
+                        <div class="nav-item">🏠<br>Home</div>
+                        <div class="nav-item">📊<br>Batches</div>
+                        <div class="nav-item">📍<br>Track</div>
+                        <div class="nav-item active">⚙️<br>Settings</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notifications Screen -->
+            <div class="phone-mockup">
+                <div class="screen">
+                    <div class="screen-header">
+                        Notifications
+                        <button class="back-btn">←</button>
+                    </div>
+                    <div class="screen-content">
+                        <div class="card">
+                            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <div style="width: 8px; height: 8px; background: #667eea; border-radius: 50%; margin-right: 10px;"></div>
+                                <div style="flex: 1;">
+                                    <div style="font-weight: bold;">Quality Check Complete</div>
+                                    <div style="font-size: 12px; color: #666;">Batch GVF-001 passed quality assessment</div>
+                                    <div style="font-size: 11px; color: #999;">2 hours ago</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <div style="width: 8px; height: 8px; background: #00b894; border-radius: 50%; margin-right: 10px;"></div>
+                                <div style="flex: 1;">
+                                    <div style="font-weight: bold;">Shipment Delivered</div>
+                                    <div style="font-size: 12px; color: #666;">Batch HWC-002 reached destination</div>
+                                    <div style="font-size: 11px; color: #999;">1 day ago</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <div style="width: 8px; height: 8px; background: #fdcb6e; border-radius: 50%; margin-right: 10px;"></div>
+                                <div style="flex: 1;">
+                                    <div style="font-weight: bold;">Weather Alert</div>
+                                    <div style="font-size: 12px; color: #666;">Heavy rain expected tomorrow</div>
+                                    <div style="font-size: 11px; color: #999;">3 days ago</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-bar">
+                        <div class="nav-item">🏠<br>Home</div>
+                        <div class="nav-item">📊<br>Batches</div>
+                        <div class="nav-item">📍<br>Track</div>
+                        <div class="nav-item">⚙️<br>Settings</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Simulate navigation
+            const navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // Remove active class from siblings
+                    this.parentNode.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
+                    // Add active class to clicked item
+                    this.classList.add('active');
+                });
+            });
+
+            // Simulate button interactions
+            const buttons = document.querySelectorAll('.btn-mobile');
+            buttons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 150);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
